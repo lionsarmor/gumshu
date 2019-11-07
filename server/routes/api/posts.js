@@ -31,8 +31,13 @@ async function loadPostCollection() {
     const client = await mongodb.MongoClient.connect
     // change mongodb database address for new project
     ('mongodb+srv://admin1:@Urimeshi90@cluster0-mk3hl.mongodb.net/test?retryWrites=true&w=majority', {
-        useNewUrlParser: true,
-        useUnifiedTopology: true
+            // https://mongoosejs.com/docs/deprecations.html
+            useNewUrlParser: true,
+            //useFindAndModify: false,
+            //useCreateIndex: true,
+            useUnifiedTopology: true,
+            reconnectTries: 30,
+            reconnectInterval: 500, // in ms
     })
     return client.db('vue_express').collection('posts')
 }
