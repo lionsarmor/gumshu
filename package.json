@@ -1,26 +1,36 @@
 {
-  "name": "gumshoe",
-  "version": "1.0.0",
-  "description": "template for future PWAs",
-  "main": "index.js",
+  "name": "gumshu",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
   "scripts": {
-    "start": "node server/index.js",
-    "dev": "nodemon server/index.js"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test:unit": "vitest",
+    "test:e2e": "start-server-and-test preview http://localhost:4173 'cypress run --e2e'",
+    "test:e2e:dev": "start-server-and-test 'vite dev --port 4173' http://localhost:4173 'cypress open --e2e'",
+    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
+    "format": "prettier --write src/"
   },
-  "author": "James Weeks Jr",
-  "license": "MIT",
   "dependencies": {
-    "body-parser": "^1.19.0",
-    "bootstrap": "^4.3.1",
-    "bootstrap-vue": "^2.0.4",
-    "cors": "^2.8.5",
-    "express": "^4.17.1",
-    "jquery": "^3.4.1",
-    "mongodb": "^3.3.3",
-    "popper.js": "^1.16.0",
-    "tailwindcss": "^1.1.3"
+    "pinia": "^2.1.7",
+    "vue": "^3.4.29",
+    "vue-router": "^4.3.3"
   },
   "devDependencies": {
-    "nodemon": "^1.19.4"
+    "@rushstack/eslint-patch": "^1.8.0",
+    "@vitejs/plugin-vue": "^5.0.5",
+    "@vue/eslint-config-prettier": "^9.0.0",
+    "@vue/test-utils": "^2.4.6",
+    "cypress": "^13.12.0",
+    "eslint": "^8.57.0",
+    "eslint-plugin-cypress": "^3.3.0",
+    "eslint-plugin-vue": "^9.23.0",
+    "jsdom": "^24.1.0",
+    "prettier": "^3.2.5",
+    "start-server-and-test": "^2.0.4",
+    "vite": "^5.3.1",
+    "vitest": "^1.6.0"
   }
 }
