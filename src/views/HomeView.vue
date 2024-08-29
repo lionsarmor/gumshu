@@ -18,12 +18,12 @@ const handleSubmit = () => {
 <template>
   <main class="flex h-screen">
     <!-- Left Side - Logo -->
-    <div class="w-1/2 bg-gray-100 flex items-center justify-center">
+    <div class="w-1/2 bg-red-900 flex items-center justify-center">
       <img src="@/assets/gumshu.svg" alt="Logo" class="w-1/2 logo" />
     </div>
 
     <!-- Right Side - Forms -->
-    <div class="w-1/2 bg-white flex flex-col justify-center p-8">
+    <div class="w-1/2 bg-gray-100 flex flex-col justify-center p-8">
       <div class="border-b border-gray-300 pb-8 mb-8 max-w-lg">
         <h2 class="text-2xl font-bold mb-4 text-gray-800 roboto-condensed">
           {{ isLogin ? 'Login' : 'Sign Up' }}
@@ -37,7 +37,7 @@ const handleSubmit = () => {
               type="email"
               id="email"
               autofocus
-              class="px-4 py-2 transition duration-300 border border-gray-300 rounded focus:border-transparent focus:outline-none focus:ring-4 focus:ring-red-200"
+              class="px-4 py-2 transition duration-300 border border-gray-500 bg-gray-100 rounded focus:border-transparent focus:outline-none focus:ring-4 focus:ring-red-200"
               required
             />
           </div>
@@ -53,7 +53,7 @@ const handleSubmit = () => {
             <input
               type="password"
               id="password"
-              class="px-4 py-2 transition duration-300 border border-gray-300 rounded focus:border-transparent focus:outline-none focus:ring-4 focus:ring-red-200"
+              class="px-4 py-2 transition duration-300 border border-gray-500 bg-gray-100 rounded focus:border-transparent focus:outline-none focus:ring-4 focus:ring-red-200"
               required
             />
           </div>
@@ -84,7 +84,7 @@ const handleSubmit = () => {
             <button
               type="submit"
               @click.prevent="handleSubmit"
-              class="w-full px-4 py-2 text-lg font-semibold text-white transition-colors duration-300 bg-red-600 rounded-md shadow hover:bg-red-700 focus:outline-none focus:ring-red-200 focus:ring-4"
+              class="w-full px-4 py-2 text-lg font-semibold text-white transition-colors duration-300 bg-red-900 rounded-md shadow hover:bg-red-700 focus:outline-none focus:ring-red-200 focus:ring-4"
             >
               {{ isLogin ? 'Log in' : 'Sign Up' }}
             </button>
@@ -117,11 +117,11 @@ const handleSubmit = () => {
               </a>
               <a
                 href="#"
-                class="flex items-center justify-center px-4 py-2 space-x-2 transition-colors duration-300 border border-red-600 rounded-md group hover:bg-red-600 focus:outline-none"
+                class="flex items-center justify-center px-4 py-2 space-x-2 transition-colors duration-300 border border-red-900 rounded-md group hover:bg-red-900 focus:outline-none"
               >
                 <span>
                   <svg
-                    class="text-red-600 group-hover:text-white"
+                    class="text-red-900 group-hover:text-white"
                     width="24"
                     height="24"
                     fill="currentColor"
@@ -133,7 +133,7 @@ const handleSubmit = () => {
                     />
                   </svg>
                 </span>
-                <span class="text-sm font-medium text-red-600 group-hover:text-white">X</span>
+                <span class="text-sm font-medium text-red-900 group-hover:text-white">Twitter</span>
               </a>
             </div>
           </div>
@@ -153,5 +153,6 @@ const handleSubmit = () => {
 <style scoped>
 .logo {
   max-width: 30%;
+  filter: invert(1);
 }
 </style>
