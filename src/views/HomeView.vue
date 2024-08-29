@@ -1,10 +1,17 @@
 <script setup>
 import { ref } from 'vue'
+import { useRouter } from 'vue-router'
 
 const isLogin = ref(true)
 
+const router = useRouter()
+
 const toggleForm = () => {
   isLogin.value = !isLogin.value
+}
+
+const handleSubmit = () => {
+  router.push('/dashboard')
 }
 </script>
 
@@ -18,12 +25,14 @@ const toggleForm = () => {
     <!-- Right Side - Forms -->
     <div class="w-1/2 bg-white flex flex-col justify-center p-8">
       <div class="border-b border-gray-300 pb-8 mb-8 max-w-lg">
-        <h2 class="text-2xl font-bold mb-4 text-gray-800">
+        <h2 class="text-2xl font-bold mb-4 text-gray-800 roboto-condensed">
           {{ isLogin ? 'Login' : 'Sign Up' }}
         </h2>
         <form @submit.prevent class="flex flex-col space-y-5">
           <div class="flex flex-col space-y-1">
-            <label for="email" class="text-sm font-semibold text-gray-500">Email address</label>
+            <label for="email" class="text-sm font-semibold text-gray-500 roboto-condensed"
+              >Email address</label
+            >
             <input
               type="email"
               id="email"
@@ -34,7 +43,9 @@ const toggleForm = () => {
           </div>
           <div class="flex flex-col space-y-1">
             <div class="flex items-center justify-between">
-              <label for="password" class="text-sm font-semibold text-gray-500">Password</label>
+              <label for="password" class="text-sm font-semibold text-gray-500 roboto-condensed"
+                >Password</label
+              >
               <a href="#" class="text-sm text-red-600 hover:underline focus:text-red-800"
                 >Forgot Password?</a
               >
@@ -47,7 +58,9 @@ const toggleForm = () => {
             />
           </div>
           <div v-if="!isLogin" class="flex flex-col space-y-1">
-            <label for="confirm-password" class="text-sm font-semibold text-gray-500"
+            <label
+              for="confirm-password"
+              class="text-sm font-semibold text-gray-500 roboto-condensed"
               >Confirm Password</label
             >
             <input
@@ -63,11 +76,14 @@ const toggleForm = () => {
               id="remember"
               class="w-4 h-4 transition duration-300 rounded focus:ring-2 focus:ring-offset-0 focus:outline-none focus:ring-red-200"
             />
-            <label for="remember" class="text-sm font-semibold text-gray-500">Remember me</label>
+            <label for="remember" class="text-sm font-semibold text-gray-500 roboto-condensed"
+              >Remember me</label
+            >
           </div>
           <div>
             <button
               type="submit"
+              @click.prevent="handleSubmit"
               class="w-full px-4 py-2 text-lg font-semibold text-white transition-colors duration-300 bg-red-600 rounded-md shadow hover:bg-red-700 focus:outline-none focus:ring-red-200 focus:ring-4"
             >
               {{ isLogin ? 'Log in' : 'Sign Up' }}
@@ -117,7 +133,7 @@ const toggleForm = () => {
                     />
                   </svg>
                 </span>
-                <span class="text-sm font-medium text-red-600 group-hover:text-white">Twitter</span>
+                <span class="text-sm font-medium text-red-600 group-hover:text-white">X</span>
               </a>
             </div>
           </div>
