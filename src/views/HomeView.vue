@@ -46,7 +46,7 @@ const handleSubmit = () => {
               <label for="password" class="text-sm font-semibold text-gray-500 roboto-condensed"
                 >Password</label
               >
-              <a href="#" class="text-sm text-red-600 hover:underline focus:text-red-800"
+              <a href="#" class="text-sm text-red-600 hover:underline hover:text-red-800"
                 >Forgot Password?</a
               >
             </div>
@@ -142,7 +142,7 @@ const handleSubmit = () => {
 
       <!-- Switch between forms -->
       <div class="text-center max-w-lg">
-        <button @click="toggleForm" class="text-red-600 underline hover:text-red-800">
+        <button @click="toggleForm" class="text-red-600 hover:underline hover:text-red-800">
           {{ isLogin ? "Don't have an account? Sign Up" : 'Already have an account? Login' }}
         </button>
       </div>
