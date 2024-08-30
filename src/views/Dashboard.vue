@@ -8,7 +8,7 @@
           v-for="item in navItems"
           :key="item.name"
           @click="setActiveComponent(item.name)"
-          class="hover:bg-gray-800 hover:text-white p-2 nav-link flex items-center rounded-lg transition-all duration-300 ease-in-out focus:outline-none"
+          class="roboto-condensed hover:bg-gray-800 hover:text-white p-2 nav-link flex items-center rounded-lg transition-all duration-300 ease-in-out focus:outline-none"
         >
           <font-awesome-icon :icon="['fas', item.icon]" class="text-xl" />
           <span class="px-2">{{ item.name }}</span>
@@ -17,14 +17,18 @@
     </aside>
 
     <!-- Main Content Area -->
-    <!-- Conditionally render components based on activeComponent -->
-    <News v-if="activeComponent === 'News'" />
-    <Whiteboard v-if="activeComponent === 'Whiteboard'" />
-    <Tasks v-if="activeComponent === 'Tasks'" />
-    <Cases v-if="activeComponent === 'Cases'" />
-    <PublicCases v-if="activeComponent === 'Public Cases'" />
-    <Resources v-if="activeComponent === 'Resources'" />
-    <Discussion v-if="activeComponent === 'Discussion'" />
+    <div class="flex-1 flex overflow-hidden">
+      <div class="w-full h-full overflow-y-auto scrollbar-hide p-4">
+        <!-- Conditionally render components based on activeComponent -->
+        <News v-if="activeComponent === 'News'" class="mx-auto my-5" />
+        <Whiteboard v-if="activeComponent === 'Whiteboard'" />
+        <Tasks v-if="activeComponent === 'Tasks'" />
+        <Cases v-if="activeComponent === 'Cases'" />
+        <PublicCases v-if="activeComponent === 'Public Cases'" />
+        <Resources v-if="activeComponent === 'Resources'" />
+        <Discussion v-if="activeComponent === 'Discussion'" />
+      </div>
+    </div>
   </div>
 </template>
 
@@ -78,5 +82,15 @@ const setActiveComponent = (component) => {
 .nav-link:hover {
   background-color: #7f1d1d; /* Tailwind's bg-gray-800 */
   color: white;
+}
+
+/* Hide scrollbar while maintaining scroll functionality */
+.scrollbar-hide {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, and Opera */
 }
 </style>

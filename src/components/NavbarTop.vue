@@ -20,7 +20,7 @@
         class="profile flex items-center space-x-2 p-2 rounded-lg cursor-pointer"
       >
         <font-awesome-icon :icon="['fas', 'user-circle']" class="text-2xl text-gray-600" />
-        <span class="text-gray-800 font-medium">John Doe</span>
+        <span class="text-gray-800 font-medium roboto-condensed">John Doe</span>
       </div>
 
       <!-- Dropdown Menu -->

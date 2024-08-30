@@ -7,14 +7,14 @@ const newsItems = ref([]) // Reactive variable to store news items
 const loading = ref(true) // Reactive variable to manage loading state
 const error = ref(null) // Reactive variable to handle errors
 
-// Search filters
+// Set default search filters
 const keyword = ref('')
 const fromDate = ref('')
 const toDate = ref('')
 const source = ref('')
 const category = ref('crime')
-const language = ref('')
-const country = ref('')
+const language = ref('en') // Default to English
+const country = ref('us') // Default to USA
 
 const apiKey = 'pub_52096bc2503c1e77358c85d0f950e769a1a61'
 
@@ -54,11 +54,13 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="dashboard flex justify-center h-screen">
+  <div class="dashboard flex justify-center h-screen roboto-condensed">
     <!-- Confine everything to a central container -->
     <div class="w-full max-w-5xl flex justify-center">
       <!-- Sidebar -->
-      <aside class="bg-white text-black w-64 flex flex-col p-4 h-full shadow-lg">
+      <aside class="bg-white text-black w-72 flex flex-col p-4 h-full">
+        <h1 class="text-xl font-bold mb-4">NEWS</h1>
+
         <h2 class="text-xl font-bold mb-4">Search Filters</h2>
         <div class="mb-4">
           <label for="keyword" class="block text-gray-700">Keyword</label>
@@ -98,7 +100,6 @@ onMounted(() => {
         <div class="mb-4">
           <label for="language" class="block text-gray-700">Language</label>
           <select id="language" v-model="language" class="p-2 w-full border rounded">
-            <option value="">Any Language</option>
             <option value="en">English</option>
             <option value="es">Spanish</option>
             <option value="fr">French</option>
@@ -108,7 +109,6 @@ onMounted(() => {
         <div class="mb-4">
           <label for="country" class="block text-gray-700">Country</label>
           <select id="country" v-model="country" class="p-2 w-full border rounded">
-            <option value="">Any Country</option>
             <option value="us">United States</option>
             <option value="gb">United Kingdom</option>
             <option value="ca">Canada</option>
@@ -117,7 +117,7 @@ onMounted(() => {
         </div>
         <button
           @click="fetchNews"
-          class="w-full p-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+          class="w-full p-2 bg-red-900 text-white rounded hover:bg-red-600"
         >
           Search
         </button>
@@ -125,8 +125,6 @@ onMounted(() => {
 
       <!-- Main Content Area -->
       <div class="flex-1 max-w-2xl mx-auto p-6">
-        <h1 class="text-2xl font-bold mb-4 text-center">Crime News Feed</h1>
-
         <!-- Loading State -->
         <div v-if="loading" class="text-gray-500 text-center">Loading news...</div>
 
@@ -172,45 +170,3 @@ onMounted(() => {
     </div>
   </div>
 </template>
-
-<style scoped>
-/* Central container for the dashboard */
-.dashboard {
-  display: flex;
-  justify-content: center;
-  height: 100vh;
-}
-
-/* Sidebar styling */
-aside {
-  width: 250px;
-  height: 100%;
-  background-color: #f3f4f6; /* Tailwind's bg-gray-100 */
-}
-
-/* Main content area */
-.flex-1 {
-  margin-left: 1.5rem; /* Adjust to ensure space for the sidebar */
-  background-color: #f3f4f6; /* Tailwind's bg-gray-100 */
-}
-
-/* Modern card design with backdrop blur */
-.bg-opacity-80 {
-  background-color: rgba(255, 255, 255, 0.8);
-}
-
-.backdrop-blur-lg {
-  backdrop-filter: blur(10px);
-}
-
-/* Button styling for the toolbar */
-button {
-  display: flex;
-  align-items: center;
-  font-size: 1rem;
-}
-
-button font-awesome-icon {
-  margin-right: 8px;
-}
-</style>
