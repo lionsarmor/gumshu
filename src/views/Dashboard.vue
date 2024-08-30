@@ -3,11 +3,11 @@
     <!-- Sidebar -->
     <aside class="bg-gray-100 text-white w-64 flex flex-col p-4">
       <!-- Logo -->
-      <div class="flex items-center justify-center mb-8">
+      <!-- <div class="flex items-center justify-center mb-8">
         <RouterLink to="/">
           <img src="@/assets/gumshu.svg" alt="Gumshu Logo" class="h-16 logo-inverted" />
         </RouterLink>
-      </div>
+      </div> -->
 
       <!-- Sidebar Navigation -->
       <nav class="flex flex-col space-y-6 mx-5 my-12 text-black">
