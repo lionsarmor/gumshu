@@ -9,6 +9,8 @@ import {
   faGlobe,
   faFolder,
   faNewspaper,
+  faCog,
+  faSignOutAlt,
   faUser,
   faUserCircle,
   faComments
@@ -21,6 +23,8 @@ library.add(
   faUserCircle,
   faTasks,
   faBriefcase,
+  faCog,
+  faSignOutAlt,
   faGlobe,
   faFolder,
   faNewspaper,
