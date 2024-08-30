@@ -9,11 +9,23 @@ import {
   faGlobe,
   faFolder,
   faNewspaper,
+  faUser,
+  faUserCircle,
   faComments
 } from '@fortawesome/free-solid-svg-icons'
 
 // Add the icons you want to use to the library
-library.add(faChalkboard, faTasks, faBriefcase, faGlobe, faFolder, faNewspaper, faComments)
+library.add(
+  faChalkboard,
+  faUser,
+  faUserCircle,
+  faTasks,
+  faBriefcase,
+  faGlobe,
+  faFolder,
+  faNewspaper,
+  faComments
+)
 
 // Export the FontAwesomeIcon component
 export { FontAwesomeIcon }

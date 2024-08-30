@@ -15,9 +15,9 @@
           v-for="item in navItems"
           :key="item.name"
           :to="item.route"
-          class="hover:bg-red-500 hover:text-white p-2 nav-link"
+          class="hover:bg-gray-800 hover:text-white p-2 nav-link flex items-center rounded-lg transition-all duration-300 ease-in-out"
         >
-          <font-awesome-icon :icon="['fas', item.icon]" />
+          <font-awesome-icon :icon="['fas', item.icon]" class="text-xl" />
           <span class="px-2">{{ item.name }}</span>
         </RouterLink>
       </nav>
@@ -58,3 +58,16 @@ const navItems = ref([
   { name: 'Discussion', route: '/discussion', icon: 'comments' }
 ])
 </script>
+
+<style scoped>
+.nav-link {
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+.nav-link:hover {
+  background-color: #7f1d1d; /* Tailwind's bg-gray-800 */
+  color: white;
+}
+</style>
