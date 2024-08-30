@@ -16,7 +16,7 @@ const category = ref('crime')
 const language = ref('en') // Default to English
 const country = ref('us') // Default to USA
 
-const apiKey = 'pub_52096bc2503c1e77358c85d0f950e769a1a61'
+const apiKey = 'blocked -- pub_52096bc2503c1e77358c85d0f950e769a1a61'
 
 // Computed property for API query string
 const queryParams = computed(() => {

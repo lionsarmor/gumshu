@@ -40,7 +40,7 @@ import News from '@/components/News.vue'
 // import Tasks from '@/components/Tasks.vue'
 // import Cases from '@/components/Cases.vue'
 // import PublicCases from '@/components/PublicCases.vue'
-// import Resources from '@/components/Resources.vue'
+import Resources from '@/components/Resources.vue'
 // import Discussion from '@/components/Discussion.vue'
 import {
   faChalkboard,
